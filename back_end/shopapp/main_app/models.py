@@ -21,6 +21,7 @@ class Product(models.Model):
     category = models.CharField(max_length=100)
     description = models.TextField(max_length=250)
     image = models.ImageField(null=False, blank = False)
+    image2 = models.CharField(max_length=250, default='')
     price = models.IntegerField()
     brand = models.CharField(max_length=100)
   

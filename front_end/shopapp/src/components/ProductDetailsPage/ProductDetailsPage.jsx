@@ -29,38 +29,31 @@ const ProductDetailsPage = () => {
     }
 
     return (
-        <div className="user-setting" >
-            <h1>Detail page</h1>
-            <h2>{product.brand}</h2>
-            <h3>{product.description}</h3>
-            <h3>${product.price}</h3>
-            <p>Category: {product.category}</p>
-            {/* <p>{product.cloth_size}</p> */}
-            <p>{product.image}</p>
+        <>
+            <div className='row' >
 
-            
-            
-            <br />
+                <div className='column'><img src={product.image2} alt="" /></div>
+                <div className="dummy" />
+                <div className='column'>
+                    <h1>Detail page</h1>
+                    <h2>{product.brand}</h2>
+                    <h3>{product.description}</h3>
+                    <h3>${product.price}</h3>
+                    <p>Category: {product.category}</p>
+                    {/* <p>{product.cloth_size}</p> */}
 
-            {/* <button
-                name="Add to cart"
-                className="product__btn"
-                onClick={handleSubmit}
-            >
-                Quick add
-            </button> */}
-            
-            <Link to={`/cart/`}><Button  buttonType='inverted'>Add to cart</Button></Link>
-        </div>
+                    {/* <img src={product.image2} alt="" /> */}
+                    <br />
+                    <Link to={`/cart/`}><Button buttonType='inverted'>Add to cart</Button></Link>
+                    <div className="dummy" />
+                </div>
+            </div>
+        </>
+
     );
 }
 
 export default ProductDetailsPage
-
-
-
-
-// export default ProductDetailsPage
 //             <div>
 //               <label className="dropdown" for='dropdown'>Select size</label>
 //               <select className='dropdown'>
@@ -72,3 +65,8 @@ export default ProductDetailsPage
 //                 <option>XL</option>
 //                </select>
 //                </div>
+
+
+
+
+// export default ProductDetailsPage

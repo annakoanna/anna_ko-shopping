@@ -45,7 +45,7 @@ class ProductView(APIView):
     serializer_class = ProductSerializer
     def get(self, request):
 
-        products = [{'cloth_size': product.size, 'brand': product.brand,'description': product.description, 'name': product.name , 'id': product.id, 'price': product.price, 'category':product.category } for product in Product.objects.all()]
+        products = [{'cloth_size': product.size, 'brand': product.brand,'description': product.description,'image2': product.image2, 'name': product.name , 'id': product.id, 'price': product.price, 'category':product.category } for product in Product.objects.all()]
         return Response(products)
 
 
@@ -55,13 +55,7 @@ class ProductDetailView(APIView):
     def get(self, request, id, *args, **kwargs):
         data = request.data
         user = request.user
-        # result = {
-        #         'id': product.id,
-        #         'brand': product.brand,
-        #         'price': product.price,
-        #         # 'description':product.description
-        #     }
-        # product_id = str(product.id)
+        
         product = Product.objects.get(id=id)
         # product = Product.objects.get(pk=id )
         if not product:

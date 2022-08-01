@@ -17,15 +17,20 @@ const Kids = ({ products }) => {
                         <div key={product.id}>
                             <h4><Link to={`/kids/${product.id}/`}>{product.brand}</Link></h4>
                             <h4>$ {product.price}</h4>
-                            <h4> {product.description}</h4>
+                            
+                            <img src={product.image2} alt="" />
 
                             {/* <h4>{product.cloth_size}</h4> */}
 
                             {/* <h4>{product.name}</h4> */}
                         </div>
+                        <div>
+
+                        </div>
                     </div>
                 );
             })}
+            <div className="dummy" />
             <div className="dummy" />
         </div>
     );

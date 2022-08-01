@@ -37,24 +37,25 @@ const Cart = ({ product }) => {
                 {/* <h3>{product.quantati}</h3>
             <h3>{product.size}</h3> */}
                 {cart?.map(item => (<div>
-                    <h1>brand: ${item?.product?.brand}</h1>
-                    <h1>Size: ${item?.product?.size}</h1>
-                    <h1>Quantity: ${item?.quantity}</h1>
-                    <h1>Description: ${item?.product?.description}</h1>
-                </div>))}
+                    <h2>brand: {item?.product?.brand}</h2>
+                    <h3>Size: {item?.product?.size}</h3>
+                    <h3>Quantity: {item?.quantity}</h3>
+                    <h3>Description: {item?.product?.description}</h3>
                 <Button buttonType='inverted' >Delete</Button>
+                </div>))}
             </div>
             <div className="user-setting">
-                <h3>Subtotal
+                <h3>Subtotal${product?.price}
                     {/* {product.price} */}
                 </h3>
                 <h3>Delivery  $0.00</h3>
-                <h3>Total    USD
+                <h3>Total  {product?.price}  USD
                     {/* {product.price} */}
                 </h3>
                 <Button buttonType='inverted'>Go To Checkout</Button>
             </div>
-
+            <div className="dummy" />
+            <div className="dummy" />
         </div>
     )
 }
