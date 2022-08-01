@@ -6,7 +6,9 @@ user-setting {
     height: 100px;
 }
 
-.form-username, .form-password, .form-useravatar {
+.form-username,
+.form-password,
+.form-useravatar {
     grid-template-columns: 4fr;
     padding: 3vmin;
     background-color: white;
@@ -25,7 +27,7 @@ p.error-message {
     text-align: center;
 }
 
- form {
+form {
     display: flex;
     flex-direction: column;
     grid-template-rows: 8fr;
@@ -37,7 +39,7 @@ p.error-message {
     border: 0;
     font: inherit;
     vertical-align: baseline;
-     -moz-box-direction: normal;
+    -moz-box-direction: normal;
     -webkit-box-direction: normal;
 }
 
@@ -104,11 +106,11 @@ button.btn-xs {
     padding: .4vmin .5vmin;
 }
 
-button:disabled,
+/* button:disabled,
 form:invalid button[type="submit"] {
     cursor: not-allowed;
-    background-color: ;
-}
+    background-color:
+} */
 
 button[type="submit"] {
     grid-column: span 2;
@@ -120,6 +122,7 @@ button[type="submit"] {
 h1 {
     font-size: 2rem;
 }
+
 .dummy {
     height: 2em;
 }
