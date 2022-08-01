@@ -112,46 +112,35 @@ class CartView(APIView):
         cartItem.save()
         return Response({'success': 'added product to cart successfully'})
 
-# class CartView(APIView):
-#     serializer_class = CartSerializer
-#     def get(self, request):
-#         data= request.data
-#         user = request.user
-#         cart = [{'user': cart.user, 'product': cart.product,'quantity': cart.quantity, 'id': cart.id, } for cart in Cart.objects.all()]
-#         return Response(cart)
-        
+    
 
-
-# class CartView(APIView):
-#     def add(self, request, format=None):
-#         result = {
-#                 'id': product.id,
-#                 'brand': product.brand,
-#                 'price': product.price,
-#                 # 'description':product.description
-                
-            # }
-        # data = request.data
-        # user = request.user
-        # product = request.product
-        # product_id = str(product.id)
-        # if product_id not in self.cart:
-        #     self.cart[product_id] = {'quantity': 0 }
-        # if update_quantity:
-        #     self.cart[product_id]['quantity'] = quantity
-        # else:
-        #     self.cart[product_id]['quantity'] += quantity
-        # self.save()
-
-
-    # def remove(self, product):
-    #     product_id = str(product.id)
-    #     if product_id in self.cart:
-    #         del self.cart[product_id]
-    #         self.save()
+    # def delete(self, request):
+    #     data= request.data
+    #     product_id = data['product_id']
+    #     quantity = data['quantity']
+    #     user = request.user
+    #     # if no cart for the user, just create one
+    #     cart, created = Cart.objects.get_or_create(user=user)
+    #     cartItem, created = CartItem.objects.get_or_create(cart=cart, product_id=product_id)
+    #     Cart.objects.filter(user=user).delete(cartItem=cartItem)
+    #     cartItem = CartItem.objects.get()
+    #     # product = Product.objects.get(pk=id )e
+    #     product.delete()
+    #     if created:
+    #         # new created cartItem
+    #         cartItem.quantity = quantity
+    #     else:
+    #         # existed cartItem, need to add quantity
+    #         cartItem.quantity += quantity
+    #     cartItem.save()
+    #     return Response({'success': 'deleted success'})
 
 
 
+
+    
+
+ 
 
 # @method_decorator(csrf_exempt, name='dispatch')
 class SignupView(APIView):
@@ -179,12 +168,7 @@ class SignupView(APIView):
             print(e)
             return Response({'error': 'Something went wrong during register'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-# @method_decorator(ensure_csrf_cookie, name='dispatch')
-# class GetCSRFToken(APIView):
-#     permission_classes = (permissions.AllowAny, )
 
-#     def get(self, request, format=None):
-#         return Response({'succeess': 'CSRF cookie set'})
 
 
 class LoginView(APIView):

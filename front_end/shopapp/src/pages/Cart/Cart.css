@@ -5,7 +5,9 @@ user-setting {
 .user-setting .dummy {
     height: 100px;
 }
-
+img{
+    height: 20%;
+}
 .form-username,
 .form-password,
 .form-useravatar {

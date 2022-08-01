@@ -27,34 +27,34 @@ const Cart = ({ product }) => {
 
     return (
         <div>
-            <h1> Shopping Bag</h1>
             <div className="user-setting">
-                <img src="" alt="" />
 
-                {/* <p>{product.brand}</p>
-            <p>${product.description}</p>
-            <p>{product.category}</p> */}
-                {/* <h3>{product.quantati}</h3>
-            <h3>{product.size}</h3> */}
-                {cart?.map(item => (<div>
-                    <h2>brand: {item?.product?.brand}</h2>
-                    <h3>Size: {item?.product?.size}</h3>
-                    <h3>Quantity: {item?.quantity}</h3>
-                    <h3>Description: {item?.product?.description}</h3>
-                <Button buttonType='inverted' >Delete</Button>
+
+
+                <h1> My Shopping Bag</h1>
+                {cart?.map(item => (<div className="row">
+                    <div className="column">
+                        <img src={item?.product?.image2} alt="" />
+                        <h2>{item?.product?.brand}</h2>
+                        <h3>Size: {item?.product?.size}</h3>
+                        <h3>Quantity: {item?.quantity}</h3>
+                        <h3>Description: {item?.product?.description}</h3>
+                        <Button buttonType='inverted' >Delete</Button>
+                    </div>
+                    <div className="column">
+                        <h3>Subtotal:      ${item?.product?.price}
+                            {/* {product.price} */}
+                        </h3>
+                        <h3>Delivery  $0.00</h3>
+                        <h3>Total:      {item?.product?.price}  USD
+                            {/* {product.price} */}
+                        </h3>
+                        <Button buttonType='inverted'>Go To Checkout</Button>
+                        <div className="dummy" />
+                    </div>
+                    <div className="dummy" />
                 </div>))}
             </div>
-            <div className="user-setting">
-                <h3>Subtotal${product?.price}
-                    {/* {product.price} */}
-                </h3>
-                <h3>Delivery  $0.00</h3>
-                <h3>Total  {product?.price}  USD
-                    {/* {product.price} */}
-                </h3>
-                <Button buttonType='inverted'>Go To Checkout</Button>
-            </div>
-            <div className="dummy" />
             <div className="dummy" />
         </div>
     )

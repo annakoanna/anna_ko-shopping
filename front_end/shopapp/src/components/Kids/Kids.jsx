@@ -14,7 +14,7 @@ const Kids = ({ products }) => {
                 //   <ProductDetailsPage product={product} index={i}/>
                 return (
                     <div className="user-setting">
-                        <div key={product.id}>
+                        <div className='column' key={product.id}>
                             <h4><Link to={`/kids/${product.id}/`}>{product.brand}</Link></h4>
                             <h4>$ {product.price}</h4>
                             

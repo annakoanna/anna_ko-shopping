@@ -10,6 +10,9 @@ body {
   object-fit: cover;
     font-family: "object-fit: cover;";
     visibility: visible;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
   
 }
 h1{

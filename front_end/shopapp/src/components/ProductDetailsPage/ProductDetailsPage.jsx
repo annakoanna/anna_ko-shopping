@@ -30,26 +30,29 @@ const ProductDetailsPage = () => {
 
     return (
         <>
-            <div className='row' >
-
-                <div className='column'><img src={product.image2} alt="" /></div>
-                <div className="dummy" />
-                <div className='column'>
-                    <h1>Detail page</h1>
-                    <h2>{product.brand}</h2>
-                    <h3>{product.description}</h3>
-                    <h3>${product.price}</h3>
-                    <p>Category: {product.category}</p>
-                    {/* <p>{product.cloth_size}</p> */}
-
-                    {/* <img src={product.image2} alt="" /> */}
-                    <br />
-                    <Link to={`/cart/`}><Button buttonType='inverted'>Add to cart</Button></Link>
-                    <div className="dummy" />
-                </div>
+        <div className='row'>
+        <div className='column'>
+            <h1>Detail page</h1>
+            <img src={product.image2} alt="" />
             </div>
+        <div className="dummy" />
+        <div className='column'>
+            <h2>{product.brand}</h2>
+            <br />
+            <h3>{product.description}</h3>
+            <br />
+            <h3>${product.price}</h3>
+            <br />
+            <p>Category: {product.category}</p>
+            
+            <br />
+            <Link to={`/cart/`} onClick={handleSubmit}><Button buttonType='inverted'>Add to cart</Button></Link>
+            <div className="dummy" />
+            </div>
+            </div>
+            
         </>
-
+        
     );
 }
 
