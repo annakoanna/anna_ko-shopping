@@ -22,17 +22,29 @@ const getSingleProduct = async () =>{
 return (
      <>
          
-            <div className="user-setting2">
-            <h1>detail page</h1>
-            <p>{product.name}</p>
-            <p>${product.price}</p>
-            <p>{product.category}</p>
-            {/* <p>{product.cloth_size}</p> */}
+            <div className="user-setting">
+            <h1>Detail page</h1>
+            <h2>{product.brand}</h2>
             <p>{product.description}</p>
-           <p>{product.image}</p>
-          
+            {/* <p>{product.name}</p> */}
+            <h3>${product.price}</h3>
+            {/* <p>{product.category}</p> */}
+            {/* <p>{product.cloth_size}</p> */}
+            <img src="{product.image}"alt="" />
+            <p>{product.image}</p>
+           <img src="{product.image}" alt="photo" />
+        <div>
+          <label className="dropdown" for='dropdown'>Select size</label>
+          <select className='dropdown'>
+            <option disabled value={product.size}>Select size</option>
+            <option>XS</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+           </select>
+           </div>
             <br />
-            {product.description}
             <br />
             {/* <Link to={`/product/${index}`}>
                 <img src={product.brand} />

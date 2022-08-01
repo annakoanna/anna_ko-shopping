@@ -175,3 +175,8 @@ CSRF_TRUSTED_ORIGINS = [
 
 CORS_ALLOW_ALL_ORIGINS = True  
 CORS_ALLOW_CREDENTIALS = True
+
+
+
+# MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'shopapp')
+# MEDIA_URL = '/media/'
