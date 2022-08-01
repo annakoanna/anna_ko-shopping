@@ -50,7 +50,7 @@ const ProductDetailsPage = () => {
                 Quick add
             </button> */}
             
-            <Link to={`/cart/`}><Button onSubmit={handleSubmit} onClick={handleSubmit} buttonType='inverted'>Add to cart</Button></Link>
+            <Link to={`/cart/`}><Button  buttonType='inverted'>Add to cart</Button></Link>
         </div>
     );
 }
