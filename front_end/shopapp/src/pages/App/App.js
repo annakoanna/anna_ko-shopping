@@ -56,7 +56,7 @@ export default function App() {
       <Routes>
         <Route path='/' element={<NavBar user={user} setUser={setUser} />}>
           <Route index element={<HomePage />} />
-          <Route path='cart' element={<Cart />} />
+          <Route path='cart' element={<Cart user={user}/>} />
           <Route path="auth" element={<AuthPage setUser={setUser} />} />
           <Route path='women' element={<Women products={products}/>}  />  
           <Route path='men' element={<Men products={products}/>} />
@@ -65,7 +65,7 @@ export default function App() {
           <Route path="/*" element={<Navigate to="/" />} />
           <Route path='allproduct' element={<ProductList products={products}/>} /> 
           <Route path='search' element={<Search />} />
-          <Route path='kids/:id' element={<ProductDetailsPage products={products}/>}/>
+          <Route path='kids/:id/' element={<ProductDetailsPage products={products}/>}/>
           <Route
               path="/settings"
               element={
