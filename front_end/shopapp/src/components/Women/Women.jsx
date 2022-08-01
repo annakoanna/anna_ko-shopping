@@ -2,17 +2,37 @@
 import './Women.css';
 import React from "react"
 const Women=({products})=> {
-    //const [product, setProduct]= useState({
-    //     brand:'',
-    //     description:'', 
-    //     price:'',
-
-    // });
-    // const handleChange =(e)=> {
-    //     e.preventDefault();
+    
         
-    // }
-
+        // const filtered = products.filter(obj => {
+        //   return obj.category === 'women';
+        // });
+      
+        // console.log(filtered)
+        // return (
+        //   <div>
+        //     {filtered.map(product => {
+        //       return (
+        //         <div className="user-setting">
+      
+        //         <div className='column' key={product.id}>
+        //           <h4>{product.brand}</h4>
+        //           <h4>$ {product.price}</h4>
+        //           <h4> {product.description}</h4>
+        
+        //           {/* <h4>{product.name}</h4> */}
+        //           </div>
+      
+                  
+    //             </div>
+    //           );
+    //         })}
+    //       </div>
+    //     );
+    //   }
+      
+        
+       
     
     return (
       <>

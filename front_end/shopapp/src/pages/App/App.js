@@ -6,8 +6,9 @@ import ProductCard from "../../components/ProductCard/ProductCard";
 import ProductList from "../../components/ProductList/ProductList";
 import Search from "../../components/Search/Search";
 import "./App.css";
-// import AuthPage from "../AuthPage/AuthPage";
 import ProductDetailsPage from "../../components/ProductDetailsPage/ProductDetailsPage";
+import ProductDetailsPageW from "../../components/Women/ProductDetailsPageW";
+import ProductDetailsPagee from "../../components/Men/ProductDetailsPagee";
 import { useState } from "react";
 import { Routes, Route , Navigate} from "react-router-dom";
 // import { getUser } from "../../utilities/users-service";
@@ -21,12 +22,12 @@ import {useEffect} from 'react'
 import axios from 'axios'
 
 import { userProfile } from '../../Utilities/api'
-
+import { addToCart } from '../../Utilities/cart-api'
 
 export default function App() {
   const [user, setUser] = useState();
   const [products, setProducts] = useState();
-  // const[profile, setProfile] = useState();
+  const[product, setProduct] = useState();
 
   function componentDidMount() {
 		//console.log('it mounted');
@@ -44,6 +45,10 @@ export default function App() {
     userProfile()
       .then(user => setUser(user))
       .catch(err => setUser(undefined));
+
+    addToCart()
+      .then(product => setProduct(user))
+      .catch(err => setProduct(undefined));
 	}
 	useEffect(() => {
 		componentDidMount();
@@ -56,9 +61,9 @@ export default function App() {
       <Routes>
         <Route path='/' element={<NavBar user={user} setUser={setUser} />}>
           <Route index element={<HomePage />} />
-          <Route path='cart' element={<Cart user={user}/>} />
+          <Route path='cart' element={<Cart user={user} products={products}/>} />
           <Route path="auth" element={<AuthPage setUser={setUser} />} />
-          <Route path='women' element={<Women products={products}/>}  />  
+          <Route path='women' element={<Women product={product}/>}  />  
           <Route path='men' element={<Men products={products}/>} />
           <Route path='kids' element={<Kids  products={products} />} />
           <Route path='product' element={<ProductCard />} />
@@ -66,6 +71,8 @@ export default function App() {
           <Route path='allproduct' element={<ProductList products={products}/>} /> 
           <Route path='search' element={<Search />} />
           <Route path='kids/:id/' element={<ProductDetailsPage products={products}/>}/>
+          <Route path='men/:id/' element={<ProductDetailsPagee products={products}/>}/>
+          <Route path='women/:id/' element={<ProductDetailsPageW products={products}/>}/>
           <Route
               path="/settings"
               element={
