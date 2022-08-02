@@ -1,12 +1,13 @@
-import Summary from "../../components/Summary/Summary";
+
 import ShoppingItem from "../../components/ShoppingItem/ShoppingItem";
 import Button from "../../components/Button/Button";
 import { useState, useEffect } from "react";
-import { getCart } from "../../Utilities/cart-api";
+import { deleteFromCart, getCart } from "../../Utilities/cart-api";
 import { Routes, Route, useParams } from "react-router-dom";
 import axios from "axios";
 // import { Link } from "react-router-dom";
 const Cart = ({ product }) => {
+    const [refreshCart, setRefreshCart] = useState(false)
     const [cart, setCart] = useState()
     const fetchCartItems = async () => {
         const response = await getCart();
@@ -22,14 +23,22 @@ const Cart = ({ product }) => {
 
     useEffect(() => {
         fetchCartItems();
-    }, [])
+    }, [refreshCart])
+    
+
+    async function handleDelete(e) {
+       
+         console.log(e.target.id)
+       let productId = e.target.id
+        
+        await deleteFromCart(productId);
+        setRefreshCart(!refreshCart)
+    }
 
 
     return (
         <div>
             <div className="user-setting">
-
-
 
                 <h1> My Shopping Bag</h1>
                 {cart?.map(item => (<div className="row">
@@ -39,8 +48,9 @@ const Cart = ({ product }) => {
                         <h3>Size: {item?.product?.size}</h3>
                         <h3>Quantity: {item?.quantity}</h3>
                         <h3>Description: {item?.product?.description}</h3>
-                        <Button buttonType='inverted' >Delete</Button>
+                        <Button buttonType='inverted' onClick={handleDelete} id={item.product.id}>Delete</Button>
                     </div>
+                    <div className="dummy" />
                     <div className="column">
                         <h3>Subtotal:      ${item?.product?.price}
                             {/* {product.price} */}
@@ -49,10 +59,9 @@ const Cart = ({ product }) => {
                         <h3>Total:      {item?.product?.price}  USD
                             {/* {product.price} */}
                         </h3>
-                        <Button buttonType='inverted'>Go To Checkout</Button>
+                        <Button buttonType='inverted'>Checkout</Button>
                         <div className="dummy" />
                     </div>
-                    <div className="dummy" />
                 </div>))}
             </div>
             <div className="dummy" />

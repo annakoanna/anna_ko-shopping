@@ -29,31 +29,47 @@ const ProductDetailsPageW = () => {
     }
 
     return (
-        <div className="user-setting" >
+        <>
+        <div className='row'>
+        <div className='column'>
             <h1>Detail page</h1>
+            <img src={product.image2} alt="" />
+            </div>
+        <div className="dummy" />
+        <div className='column'>
             <h2>{product.brand}</h2>
-            <h3>{product.description}</h3>
-            <h3>${product.price}</h3>
-            <p>Category: {product.category}</p>
-            {/* <p>{product.cloth_size}</p> */}
-            <p>{product.image}</p>
-
-            
-            
             <br />
-
-            {/* <button
-                name="Add to cart"
-                className="product__btn"
-                onClick={handleSubmit}
-            >
-                Quick add
-            </button> */}
+            <h3>{product.description}</h3>
+            <br />
+            <h3>${product.price}</h3>
+            <br />
+            <p>Category: {product.category}</p>
             
-            <Link to={`/cart/`}><Button onSubmit={handleSubmit} onClick={handleSubmit} buttonType='inverted'>Add to cart</Button></Link>
-        </div>
+                        <div>
+                           <label className="dropdown" for='dropdown'>Select size</label>
+                          <select className='dropdown'>
+                            <option disabled value={product.size}>Select size</option>
+                            <option>XS</option>
+                            <option>S</option>
+                           <option>M</option>
+                            <option>L</option>
+                          <option>XL</option>
+                           </select>
+                           </div>
+            <br />
+            <Link to={`/cart/`} onClick={handleSubmit}><Button buttonType='inverted'>Add to cart</Button></Link>
+            <div className="dummy" />
+            </div>
+            </div>
+            
+        </>
+        
     );
 }
 
 export default ProductDetailsPageW
 
+
+
+
+// export default ProductDetailsPage

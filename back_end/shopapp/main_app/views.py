@@ -55,7 +55,6 @@ class ProductDetailView(APIView):
     def get(self, request, id, *args, **kwargs):
         data = request.data
         user = request.user
-        
         product = Product.objects.get(id=id)
         # product = Product.objects.get(pk=id )
         if not product:
@@ -114,26 +113,24 @@ class CartView(APIView):
 
     
 
-    # def delete(self, request):
-    #     data= request.data
-    #     product_id = data['product_id']
-    #     quantity = data['quantity']
-    #     user = request.user
-    #     # if no cart for the user, just create one
-    #     cart, created = Cart.objects.get_or_create(user=user)
-    #     cartItem, created = CartItem.objects.get_or_create(cart=cart, product_id=product_id)
-    #     Cart.objects.filter(user=user).delete(cartItem=cartItem)
-    #     cartItem = CartItem.objects.get()
-    #     # product = Product.objects.get(pk=id )e
-    #     product.delete()
-    #     if created:
-    #         # new created cartItem
-    #         cartItem.quantity = quantity
-    #     else:
-    #         # existed cartItem, need to add quantity
-    #         cartItem.quantity += quantity
-    #     cartItem.save()
-    #     return Response({'success': 'deleted success'})
+    def delete(self, request):
+        product_id= request.data
+     
+        
+        user = request.user
+        # # if no cart for the user, just create one
+        cart = Cart.objects.filter(user=user)
+        
+        # # artitem= CartItem.objects.filter(cart=cart[0])
+        cartitem= CartItem.objects.filter(product=product_id)
+        # # Cart.objects.filter(cartitem=cartitem)
+        # # cartItem = CartItem.objects.get()
+        print('cartitem', cartitem)
+        cartitem.delete()
+       
+        return Response({'success': 'deleted success'})
+
+
 
 
 

@@ -10,4 +10,7 @@ export async function getCart() {
 export async function addToCart(productData) {
     return sendRequest(BASE_URL, 'POST', productData)
 }
+export async function deleteFromCart(productData) {
+    return sendRequest(BASE_URL, 'DELETE', productData)
+}
 

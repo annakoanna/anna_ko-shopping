@@ -29,31 +29,47 @@ const ProductDetailsPagee = () => {
     }
 
     return (
-        <div className="user-setting" >
-            <h1>Detail page</h1>
-            <h2>{product.brand}</h2>
-            <h3>{product.description}</h3>
-            <h3>${product.price}</h3>
-            <p>Category: {product.category}</p>
-            {/* <p>{product.cloth_size}</p> */}
-            <p>{product.image}</p>
+        <>
+            <div className='row'>
+                <div className='column'>
+                    <h1>Detail page</h1>
+                    <img src={product.image2} alt="" />
+                </div>
+                <div className="dummy" />
+                <div className='column'>
+                    <h2>{product.brand}</h2>
+                    
+                    <h3>{product.description}</h3>
+                    
+                    <h3>${product.price}</h3>
+                    
+                    <h3>Category: {product.category}</h3>
 
-            
-            
-            <br />
+                    <div>
+                        <label className="dropdown" for='dropdown'>Select size</label>
+                        <select className='dropdown'>
+                            <option disabled value={product.size}>Select size</option>
+                            <option>XS</option>
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                        </select>
+                    </div>
+                    <br />
+                    <Link to={`/cart/`} onClick={handleSubmit}><Button buttonType='inverted'>Add to cart</Button></Link>
+                    <div className="dummy" />
+                </div>
+            </div>
 
-            {/* <button
-                name="Add to cart"
-                className="product__btn"
-                onClick={handleSubmit}
-            >
-                Quick add
-            </button> */}
-            
-            <Link to={`/cart/`}><Button onSubmit={handleSubmit} onClick={handleSubmit} buttonType='inverted'>Add to cart</Button></Link>
-        </div>
+        </>
+
     );
 }
 
 export default ProductDetailsPagee
 
+
+
+
+// export default ProductDetailsPage

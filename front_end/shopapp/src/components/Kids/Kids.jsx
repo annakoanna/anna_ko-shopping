@@ -15,9 +15,9 @@ const Kids = ({ products }) => {
                 return (
                     <div className="user-setting">
                         <div className='column' key={product.id}>
-                            <h4><Link to={`/kids/${product.id}/`}>{product.brand}</Link></h4>
+                            <h2><Link to={`/kids/${product.id}/`}>{product.brand}</Link></h2>
+                            <h3>New Season</h3>
                             <h4>$ {product.price}</h4>
-                            
                             <img src={product.image2} alt="" />
 
                             {/* <h4>{product.cloth_size}</h4> */}

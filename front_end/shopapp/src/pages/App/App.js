@@ -22,7 +22,7 @@ import {useEffect} from 'react'
 import axios from 'axios'
 
 import { userProfile } from '../../Utilities/api'
-import { addToCart } from '../../Utilities/cart-api'
+import { addToCart, deleteFromCart } from '../../Utilities/cart-api'
 
 export default function App() {
   const [user, setUser] = useState();
@@ -47,6 +47,9 @@ export default function App() {
       .catch(err => setUser(undefined));
 
     addToCart()
+      .then(product => setProduct(user))
+      .catch(err => setProduct(undefined));
+    deleteFromCart()
       .then(product => setProduct(user))
       .catch(err => setProduct(undefined));
 	}

@@ -45,6 +45,17 @@ const ProductDetailsPage = () => {
             <br />
             <p>Category: {product.category}</p>
             
+                        <div>
+                           <label className="dropdown" for='dropdown'>Select size</label>
+                          <select className='dropdown'>
+                            <option disabled value={product.size}>Select size</option>
+                            <option>XS</option>
+                            <option>S</option>
+                           <option>M</option>
+                            <option>L</option>
+                          <option>XL</option>
+                           </select>
+                           </div>
             <br />
             <Link to={`/cart/`} onClick={handleSubmit}><Button buttonType='inverted'>Add to cart</Button></Link>
             <div className="dummy" />
@@ -57,17 +68,6 @@ const ProductDetailsPage = () => {
 }
 
 export default ProductDetailsPage
-//             <div>
-//               <label className="dropdown" for='dropdown'>Select size</label>
-//               <select className='dropdown'>
-//                 <option disabled value={product.size}>Select size</option>
-//                 <option>XS</option>
-//                 <option>S</option>
-//                 <option>M</option>
-//                 <option>L</option>
-//                 <option>XL</option>
-//                </select>
-//                </div>
 
 
 
