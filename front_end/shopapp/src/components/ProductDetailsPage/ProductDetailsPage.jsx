@@ -1,7 +1,7 @@
 import './ProductDetailsPage.css';
 import Button from "../Button/Button";
 import { useState, useEffect } from "react";
-import { Routes, Route, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { addToCart } from '../../Utilities/cart-api';
