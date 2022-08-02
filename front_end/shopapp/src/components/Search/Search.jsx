@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function SearchBar({  }) {
+export default function SearchBar({ products }) {
   const [text, setText] = useState("");
 
   function handleSubmit(evt) {

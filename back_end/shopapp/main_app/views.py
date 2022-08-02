@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from rest_framework import status
-
 from django.http import JsonResponse
-
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from . serializers import *
@@ -12,9 +10,6 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.http import JsonResponse
-# from .serializers import MyTokenObtainPairSerializer, RegisterSerializer
-# from rest_framework_simplejwt.views import TokenObtainPairView
-# from rest_framework import generics
 from django.contrib.auth.models import User
 from rest_framework.permissions import AllowAny, IsAuthenticated
 # from rest_framework.decorators import api_view, permission_classes
@@ -25,20 +20,6 @@ from .models import *
 from django.contrib.auth import authenticate, login, logout
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
-
-
-
-
-
-
-
-# class ProductView(APIView):
-#     serializer_class = ProductSerializer
-#     def get(self, request):
-
-#         products = [{'brand': product.brand,'descriprion': product.description, 'name': product.name, 'price': product.price, 'category':product.category } for product in Product.objects.all()]
-#         return Response(products)
-
 
 
 class ProductView(APIView):
@@ -115,29 +96,15 @@ class CartView(APIView):
 
     def delete(self, request):
         product_id= request.data
-     
-        
         user = request.user
-        # # if no cart for the user, just create one
         cart = Cart.objects.filter(user=user)
-        
         # # artitem= CartItem.objects.filter(cart=cart[0])
         cartitem= CartItem.objects.filter(product=product_id)
-        # # Cart.objects.filter(cartitem=cartitem)
-        # # cartItem = CartItem.objects.get()
         print('cartitem', cartitem)
         cartitem.delete()
-       
         return Response({'success': 'deleted success'})
 
 
-
-
-
-
-    
-
- 
 
 # @method_decorator(csrf_exempt, name='dispatch')
 class SignupView(APIView):

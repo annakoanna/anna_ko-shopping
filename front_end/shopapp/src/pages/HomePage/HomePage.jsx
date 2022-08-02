@@ -57,7 +57,7 @@ export default function Home({user}) {
                     <img src='https://cdn-static.farfetch-contents.com/cms-cm10/caas/v1/media/3670830/data/c155d53e0c53cd51241840519c5f11f9/1x1_two-columns/637/data.jpeg' alt="" />
 
                 </div>
-                <div className="section-container">
+                <div className="section-container2">
                     <Link to="men">
                         <Button buttonType='inverted'>Shop Men</Button>
                     </Link>

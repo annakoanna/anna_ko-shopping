@@ -2,7 +2,6 @@ import NavBar from "../../components/NavBar/NavBar";
 import Women from "../../components/Women/Women";
 import Men from "../../components/Men/Men";
 import Kids from "../../components/Kids/Kids";
-import ProductCard from "../../components/ProductCard/ProductCard";
 import ProductList from "../../components/ProductList/ProductList";
 import Search from "../../components/Search/Search";
 import "./App.css";
@@ -69,10 +68,10 @@ export default function App() {
           <Route path='women' element={<Women product={product}/>}  />  
           <Route path='men' element={<Men products={products}/>} />
           <Route path='kids' element={<Kids  products={products} />} />
-          <Route path='product' element={<ProductCard />} />
+          {/* <Route path='product' element={<ProductCard />} /> */}
           <Route path="/*" element={<Navigate to="/" />} />
           <Route path='allproduct' element={<ProductList products={products}/>} /> 
-          <Route path='search' element={<Search />} />
+          <Route path='search' element={<Search products={products}/>} />
           <Route path='kids/:id/' element={<ProductDetailsPage products={products}/>}/>
           <Route path='men/:id/' element={<ProductDetailsPagee products={products}/>}/>
           <Route path='women/:id/' element={<ProductDetailsPageW products={products}/>}/>

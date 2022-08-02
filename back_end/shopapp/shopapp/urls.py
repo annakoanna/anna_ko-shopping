@@ -22,8 +22,5 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('main_app.urls')),
-    # path('profiles/', include('django.contrib.auth.urls')),
-    
-#     path('main_app/', include('main_app.urls')),
+
  ]
-#  urlpatterns +=[re_path(r'^.*', TemplateView.as_view(template_name='index.html'))]

@@ -1,21 +1,18 @@
 .section-container {
-    /* min-width: 30%;
-    height: 240px; */
     width: 65%;
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* display: block; */
     margin: 20px 10px 20px;
     overflow: hidden;
-} */
+} 
 .section-container:hover {
     cursor: pointer;
 }
-/* img {
-    max-width: 100%;
-    height: auto;
-} */
+
 a {
     color:inherit;
 }
+.section-container2 {
+    width: 65%;
+    margin: 20px 10px 20px;
+    overflow: hidden;
+    float: right;
+} 
