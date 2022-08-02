@@ -35,23 +35,27 @@ const Cart = ({ product }) => {
                     <div className="column">
                         <img src={item?.product?.image2} alt="" />
                         <h2>{item?.product?.brand}</h2>
-                        <h3>Size: {item?.product?.size}</h3>
+                        {/* <h3>Size: {item?.product?.size}</h3> */}
                         <h3>Quantity: {item?.quantity}</h3>
                         <h3>Description: {item?.product?.description}</h3>
                         <Button buttonType='inverted' onClick={handleDelete} id={item.product.id}>Delete</Button>
                     </div>
                     <div className="dummy" />
-                    <div className="column">
-                        <h3>Subtotal:      ${item?.product?.price}
-                        </h3>
-                        <h3>Delivery  $0.00</h3>
-                        <h3>Total:      {item?.product?.price} USD
-                        </h3>
-                        <Button buttonType='inverted'>Checkout</Button>
-                        <div className="dummy" />
-                    </div>
                 </div>))}
             </div>
+                    <div className="user-setting">
+                         {/* <h3>Subtotal:      ${item?.product?.price} 
+                        </h3> */}
+                        <h3>Delivery  $0.00</h3>
+                        <h3>Total:   $0.00 
+                              {/* {item?.product?.price} USD */}
+                        </h3>
+                        <Button buttonType='inverted'>Checkout</Button>
+                        
+                       
+                    </div>
+            <div className="dummy" />
+            <div className="dummy" />
             <div className="dummy" />
         </div>
     )

@@ -65,7 +65,7 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path='cart' element={<Cart user={user} products={products}/>} />
           <Route path="auth" element={<AuthPage setUser={setUser} />} />
-          <Route path='women' element={<Women product={product}/>}  />  
+          <Route path='women' element={<Women products={products}/>}  />  
           <Route path='men' element={<Men products={products}/>} />
           <Route path='kids' element={<Kids  products={products} />} />
           {/* <Route path='product' element={<ProductCard />} /> */}
