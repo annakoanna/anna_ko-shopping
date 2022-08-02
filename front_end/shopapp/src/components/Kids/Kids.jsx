@@ -19,10 +19,6 @@ const Kids = ({ products }) => {
                             <h3>New Season</h3>
                             <h4>$ {product.price}</h4>
                             <img src={product.image2} alt="" />
-
-                            {/* <h4>{product.cloth_size}</h4> */}
-
-                            {/* <h4>{product.name}</h4> */}
                         </div>
                         <div>
 

@@ -1,7 +1,7 @@
 // import './ProductDetailsPage.css';
 import Button from "../Button/Button";
 import { useState, useEffect } from "react";
-import { Routes, Route, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { addToCart } from '../../Utilities/cart-api';
@@ -30,46 +30,44 @@ const ProductDetailsPageW = () => {
 
     return (
         <>
-        <div className='row'>
-        <div className='column'>
-            <h1>Detail page</h1>
-            <img src={product.image2} alt="" />
-            </div>
-        <div className="dummy" />
-        <div className='column'>
-            <h2>{product.brand}</h2>
-            <br />
-            <h3>{product.description}</h3>
-            <br />
-            <h3>${product.price}</h3>
-            <br />
-            <p>Category: {product.category}</p>
-            
-                        <div>
-                           <label className="dropdown" for='dropdown'>Select size</label>
-                          <select className='dropdown'>
+            <div className='row'>
+                <div className='column'>
+                    <h1>Detail page</h1>
+                    <img src={product.image2} alt="" />
+                </div>
+                <div className="dummy" />
+                <div className='column'>
+                    <h2>{product.brand}</h2>
+                    <br />
+                    <h3>{product.description}</h3>
+                    <br />
+                    <h3>${product.price}</h3>
+                    <br />
+                    <h3>Category: {product.category}</h3>
+
+                    <div>
+                        <label className="dropdown" for='dropdown'>Select size</label>
+                        <select className='dropdown'>
                             <option disabled value={product.size}>Select size</option>
-                            <option>XS</option>
-                            <option>S</option>
-                           <option>M</option>
-                            <option>L</option>
-                          <option>XL</option>
-                           </select>
-                           </div>
-            <br />
-            <Link to={`/cart/`} onClick={handleSubmit}><Button buttonType='inverted'>Add to cart</Button></Link>
+                            <option value={product.size}>XS</option>
+                            <option value={product.size}>S</option>
+                            <option value={product.size}>M</option>
+                            <option value={product.size}>L</option>
+                            <option value={product.size}>XL</option>
+                        </select>
+                    </div>
+                    <br />
+                    <Link to={`/cart/`} onClick={handleSubmit}><Button buttonType='inverted'>Add to cart</Button></Link>
+
+                </div>
+            </div>
             <div className="dummy" />
-            </div>
-            </div>
-            
         </>
-        
+
     );
 }
-
 export default ProductDetailsPageW
 
 
 
 
-// export default ProductDetailsPage
